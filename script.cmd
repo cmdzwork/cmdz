@@ -1,10 +1,5 @@
-
 @echo off
 setlocal EnableDelayedExpansion
-
-:: -------------------------------------------------------------------
-:: 1. Check for Administrator Privileges
-:: -------------------------------------------------------------------
 net session >nul 2>&1
 if %errorlevel% neq 0 (
     echo [ERROR] This script requires administrative privileges.
@@ -13,25 +8,13 @@ if %errorlevel% neq 0 (
     pause
     exit /b 1
 )
-
-:: -------------------------------------------------------------------
-:: 2. Display Header
-:: -------------------------------------------------------------------
 cls
-echo ===================================================================
-echo                     Custom Setup Script                           
-echo ===================================================================
+echo                    ---Custom Setup Script---                         
 echo.
-
-:: -------------------------------------------------------------------
-:: 3. Execute Custom Script Operations
-:: -------------------------------------------------------------------
 echo [*] Starting task execution...
-
 :: Example Task 1: Check system environment
 echo [*] Checking Windows version etc...
 systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"Host Name" /C:"Original Install Date" /C:"System Boot Time"
-
 :: Example Task 2: Create a directory or run administrative tasks
 echo [*] Setting up workspace directory...
 if not exist "C:\MyCustomSetup" (
@@ -40,16 +23,9 @@ if not exist "C:\MyCustomSetup" (
 ) else (
     echo [i] Directory already exists.
 )
-
 echo.
 echo [*] All tasks completed successfully.
-
-:: -------------------------------------------------------------------
-:: 4. Clean Up and Exit
-:: -------------------------------------------------------------------
 echo.
-echo ===================================================================
-echo Script execution finished. Press any key to close this window.
-echo ===================================================================
+echo ---Script execution finished. Press any key to close this window.
 pause >nul
 exit /b 0
