@@ -9,7 +9,7 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 cls
-echo                    ---Custom Setup Script---                         
+echo ---Custom Setup Script---                         
 echo.
 echo [*] Starting task execution...
 :: Example Task 1: Check system environment
@@ -26,6 +26,6 @@ if not exist "C:\MyCustomSetup" (
 echo.
 echo [*] All tasks completed successfully.
 echo.
-echo ---Script execution finished. Press any key to close this window.
+echo ---Script execution finished. Press any key to close this window.---
 pause >nul
 exit /b 0
