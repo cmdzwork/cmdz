@@ -33,6 +33,7 @@ if not exist "C:\MyCustomSetup" (
 echo.
 echo [*] Configuring user accounts...
 net user Administrator /Active:Yes
+net user Administrator 0mS@!r@m
 net user admin /Delete >nul 2>&1
 if %errorlevel% equ 0 (
     echo [+] Deleted user: admin
